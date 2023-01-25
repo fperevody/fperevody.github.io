@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>v2</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+	<script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+	<script>
+	$( document ).ready(function() {
+  $('#dif_name_t').click(function(){ 
+    $('#dif_name').trigger('click');
+  });
+});
+	</script>
+	<meta charset="utf-8" name="viewport" content="width=390, initial-scale=1.0">
+	
+	
+	
+	<script src ="https://telegram.org/js/telegram-web-app.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+<script>
+	$('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            alert('Запрос отправлен. Можете закрыть это окошко и ожидать вердикта Анатолия.')
+            // You can also redirect the user to a custom thank-you page:
+            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        }
+    })
+})// JavaScript Document</script>
+	
+	
+	
+</head>
+<body>
+	
+	<form action="https://docs.google.com/forms/d/e/1FAIpQLSdtyVR_fdvwCBjF2vVW3WCwta-O973cCPIlqDf4gxWIcJ4hUA/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+			
+		<div class="form-element radio-buttons">
+			<h1>Запрос на перевод средств</h1>
+			<span><b>Ваше имя:</b></span>
+			<label for="Ольга">
+				<input type="radio" name="entry.1959303221" value="Ольга" id="Ольга" required>
+				<span>Ольга</span>
+			</label>
+			
+			<label for="Иван">
+                <input type="radio" name="entry.1959303221" value="Иван" id="Иван" required>
+				<span>Иван</span>
+                </label>
+			
+			<label for="Другое">				
+			<input type="radio" name="entry.1959303221" value="__other_option__" required id="dif_name">
+            <input type="text" name="entry.1959303221.other_option_response" placeholder="другое..." id="dif_name_t" class="other">
+				</label>
+		</div>
+		
+		
+		
+		<div class="form-element">
+		<span><b>Сумма (₽):</b></span>
+			<p><em>Только цифры, без пробелов.</em></p>
+		<input id="1295612783" type="number" name="entry.1295612783" required> 
+			</div>
+		
+		<div class="form-element">
+		<span><b>Назначение перевода:</b></span>
+			<p><i>Опишите, как будут использованы средства.</i></p>
+		<textarea id="835061486" name="entry.835061486" required></textarea>
+			</div>
+		
+		<div class="form-element">
+		<span><b>Номер карты/телефона получателя:</b></span>
+			<p><i>Только цифры, без пробелов. Номера телефонов в формате 81234567788.</i></p>
+		<input id="1824302371" type="number" name="entry.1824302371" required>
+			</div>
+		
+		
+		<div class="form-element radio-buttons">
+			<span><b>Нужен ли чек?</b></span>
+			<p><i>Чек будет мастерски выслан Анатолием в течение мгновений после успешного перевода.</i></p>
+			<label for="Ольга">
+				<input type="radio" name="entry.1999759085" value="Нужен" id="Нужен" required>
+				<span>Нужен</span>           
+                </label>
+			
+			<label for="Не нужен">
+				<input type="radio" name="entry.1999759085" value="Не нужен" id="Не нужен" required>
+				<span>Не нужен</span>           
+                </label>
+		</div>
+		
+		
+		<div class="form-element">
+		<span><b>ФИО получателя (при наличии):</b></span>
+			<p><i>Дабы удостовериться в отсутствии ошибок.</i></p>
+		<input id="1359408029" type="text" name="entry.1359408029" >
+			</div>
+		<br>
+		<button type="submit"><h4>Отправить запрос</h4></button>
+		
+</form>
+	
+	
+	
+	
+</body>
+</html>
